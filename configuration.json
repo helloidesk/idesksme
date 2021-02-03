@@ -1,0 +1,63 @@
+{
+    "ivr": {
+        "text": "Thanks for calling. You can press a key or say the department name. Press 1 for Sales, press 2 for Support",
+        "options": [
+            {
+                "friendlyName": "Sales",
+                "digit": 1,
+                "id": "sales"
+            },
+            {
+                "friendlyName": "Support",
+                "digit": 2,
+                "id": "support"
+            }
+        ]
+    },
+    "queues": [
+        {
+            "friendlyName": "Chat Queue",
+            "filterFriendlyName": "Chat",
+            "id": "chat",
+            "taskQueueSid": "WQ7cfe3f2c50d9960da6727268e49611c9",
+            "expression": "channel == \"chat\"",
+            "targetWorkerExpression": ""
+        },
+        {
+            "friendlyName": "Phone Queue",
+            "filterFriendlyName": "Phone",
+            "id": "phone",
+            "taskQueueSid": "WQe79e56626f5d7425a3b46f66dea5d40a",
+            "expression": "channel == \"phone\"",
+            "targetWorkerExpression": "task.team == worker.team OR task.transferToWorkerSid = worker.sid"
+        },
+        {
+            "friendlyName": "Video Queue",
+            "filterFriendlyName": "Video",
+            "id": "video",
+            "taskQueueSid": "WQ2bff8dbdf9c75178bf8af1ffdb44c2df",
+            "expression": "channel == \"video\"",
+            "targetWorkerExpression": ""
+        },
+        {
+            "friendlyName": "Callback Queue",
+            "filterFriendlyName": "Callback",
+            "id": "callback",
+            "taskQueueSid": "WQ2262ce84af3c48a85071c3ec495cf3ee",
+            "expression": "channel == \"callback\"",
+            "targetWorkerExpression": ""
+        }
+    ],
+    "twilio": {
+        "workerOfflineActivitySid": "WA30434d68cd13fb8227f561e9ca1eaae6",
+        "workerAvailableActivitySid": "WA30434d68cd13fb8227f561e9ca1eaae6",
+        "workerUnavailableActivitySid": "WA30434d68cd13fb8227f561e9ca1eaae6",
+        "callerId": "+12568587205",
+        "applicationSid": "AP392d62d20e67228a1370e5a73287cf73",
+        "workflowSid": "WWf2686b7f08a4d08960264784291a5c2b",
+        "facebookPageId": null,
+        "voice": {
+            "recording": true
+        }
+    }
+}
